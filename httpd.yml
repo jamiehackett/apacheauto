@@ -12,7 +12,7 @@
     service:
       name: firewalld
       state: started
-- name: ensure httpd is running
+  - name: ensure httpd is running
     service:
       name: httpd
       state: started
