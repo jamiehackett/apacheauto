@@ -8,11 +8,13 @@
         - httpd
         - firewalld
       state: present
-  - name: ensure httpd & firewalld is running
+  - name: ensure firewalld is running
     service:
-      name: 
-        - httpd
-        - firewalld
+      name: firewalld
+      state: started
+- name: ensure httpd is running
+    service:
+      name: httpd
       state: started
   - name: Open port 80 for http access
     firewalld:
