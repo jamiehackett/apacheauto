@@ -2,13 +2,17 @@
 - name: This sets up an httpd webserver
   hosts: all
   tasks:
-  - name: Install apache packages 
+  - name: Install apache & firewalld packages 
     yum:
-      name: httpd
+      name:
+        - httpd
+        - firewalld
       state: present
-  - name: ensure httpd is running
+  - name: ensure httpd & firewalld is running
     service:
-      name: httpd 
+      name: 
+        - httpd
+        - firewalld
       state: started
   - name: Open port 80 for http access
     firewalld:
